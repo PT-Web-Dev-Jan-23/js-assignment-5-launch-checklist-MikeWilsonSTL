@@ -43,6 +43,18 @@ function formSubmission(document, pilot, coPilot, fuelLevel, cargoLevel) {
     let fuelInput = validateInput(fuelLevel);
     let cargoInput = validateInput(cargoLevel);
 
+    if (pilotInput !== "Not a Number" || copilotInput !== "Not a Number") {
+        alert("Pilot names must be strings! Try again.");
+        event.preventDefault();
+        return "";
+    }
+
+    if (fuelInput !== "Is a Number" || cargoInput !== "Is a Number") {
+        alert("Cargo and Fuel fields must be numbers! Try again.");
+        event.preventDefault();
+        return "";
+    }
+
     if (pilotInput === "Empty" && copilotInput === "Empty" && fuelInput === "Empty" && cargoInput === "Empty") {
         alert("Oh come on, you didn't enter a single thing!");
         event.preventDefault();
@@ -53,14 +65,6 @@ function formSubmission(document, pilot, coPilot, fuelLevel, cargoLevel) {
         alert("All fields need to be filled! Try again.");
         event.preventDefault();
         return "";
-    }
-
-    if (pilotInput !== "Not a Number" || copilotInput !== "Not a Number") {
-        alert("Pilot names must be strings! Try again.");
-    }
-
-    if (fuelInput !== "Is a Number" || cargoInput !== "Is a Number") {
-        alert("Cargo and Fuel fields must be numbers! Try again.");
     }
 
     let launchStatus = `<span style="color: green;">Shuttle is Ready for Launch</span>`;

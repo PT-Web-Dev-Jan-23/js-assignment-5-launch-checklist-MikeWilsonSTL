@@ -43,14 +43,14 @@ function formSubmission(document, pilot, coPilot, fuelLevel, cargoLevel) {
     let fuelInput = validateInput(fuelLevel);
     let cargoInput = validateInput(cargoLevel);
 
-    if (pilotInput === "Empty" || copilotInput === "Empty" || fuelInput === "Empty" || cargoInput === "Empty") {
-        alert("All fields need to be filled! Try again.");
+    if (pilotInput === "Empty" && copilotInput === "Empty" && fuelInput === "Empty" && cargoInput === "Empty") {
+        alert("Oh come on, you didn't enter a single thing!");
         event.preventDefault();
         return "";
     }
 
-    if (pilotInput === "Empty" && copilotInput === "Empty" && fuelInput === "Empty" && cargoInput === "Empty") {
-        alert("Oh come on, you didn't enter a single thing!");
+    if (pilotInput === "Empty" || copilotInput === "Empty" || fuelInput === "Empty" || cargoInput === "Empty") {
+        alert("All fields need to be filled! Try again.");
         event.preventDefault();
         return "";
     }

@@ -48,12 +48,12 @@ function formSubmission(document, pilot, coPilot, fuelLevel, cargoLevel) {
         event.preventDefault();
         return "";
     }
-
-    if (pilotInput === "Empty" || copilotInput === "Empty" || fuelInput === "Empty" || cargoInput === "Empty") {
+    else if (pilotInput === "Empty" || copilotInput === "Empty" || fuelInput === "Empty" || cargoInput === "Empty") {
         alert("All fields need to be filled! Try again.");
         event.preventDefault();
         return "";
     }
+
 
     if (pilotInput !== "Not a Number" || copilotInput !== "Not a Number") {
         alert("Pilot names must be strings! Try again.");
